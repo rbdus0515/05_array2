@@ -23,7 +23,7 @@ public class Array2Example {
 		arr = new int[2][3];
 		// heap 영역에 int 2차원 배열 2행 3공간을 할당
 		
-		// 2차원 배열 칙화
+		// 2차원 배열 초기화
 		// 1) 행, 열 인덱스를 이용해서 직접 초기화
 		/*
 		arr[0][0] = 10;
@@ -159,16 +159,30 @@ public class Array2Example {
 	
 	public void ex4() {
 		
+		// 5 X 5 빙고 맨들기 후...
+		// 1) 5칸 5칸 공간만들기
+		// 2) 칸마다 최대값 25인 랜덤 값 넣기 (int)( Math.random() * 25 + 1) 하면 될듯
+		
 	int[][] arr = new int[5][5];
 	
 	int num = 1;
 	
-	for(int row = 0; row < arr.length; row++) {
-		for(int col = 0; col < arr[row].length; col++) {
-			
+	for(int i = 0; i < arr.length; i++) {
+		for(int j = 0; j < arr[i].length; j++) {
+			int random = (int)( Math.random() * 25 + 1);
+			arr[i][j] = random;
 		}
 	}
-		
+	for(int i = 0; i < arr.length; i++) {
+		for(int j = 0; j < arr[i].length; j++) {
+			System.out.printf("%4d" , arr[i][j]);
+		}
+		System.out.println();
+	}
+	
+	
+	
+	
 	}
 	
 	
