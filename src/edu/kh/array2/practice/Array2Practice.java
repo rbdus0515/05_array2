@@ -116,6 +116,9 @@ public class Array2Practice {
 	
 	public void practice8(){
 		
+		// 위 문제에서 자리 배치한 것을 가지고 학생 이름을 검색하여
+		// 해당 학생이 어느 자리에 앉았는지 출력하세요.
+		
 	}
 	
 	public void practice9(){
