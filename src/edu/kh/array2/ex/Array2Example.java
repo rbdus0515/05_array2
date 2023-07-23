@@ -163,35 +163,56 @@ public class Array2Example {
 		// 1) 5칸 5칸 공간만들기
 		// 2) 칸마다 최대값 25인 랜덤 값 넣기 (int)( Math.random() * 25 + 1) 하면 될듯
 		
-	int[][] arr = new int[5][5];
-	
-	int num = 1;
-	
-	for(int i = 0; i < arr.length; i++) {
-		for(int j = 0; j < arr[i].length; j++) {
-			int random = (int)( Math.random() * 25 + 1);
-			arr[i][j] = random;
+		final int size = 5;
+		int x = 0;
+		int y = 0;
+		int z = 0;
+		
+		int[][] bingo = new int[size][size]; // 5x5 생성
+		
+		// 배열의 모든 요소를 1로부터 size x size까지의 숫자로 초기화
+		for(int i = 0; i < size; i++) {
+			for(int j = 0; j < size; j++) {
+				bingo[i][j] = i*size + j + 1;
+				// 0 x 5 + 0 + 1 = 1
+				// 0 x 5 + 1 + 1 = 2
+				// 0 x 5 + 2 + 1 = 3
+				// ...
+				// 4 x 5 + 3 + 1 = 23
+				// 4 x 5 + 4 + 1 = 24
+				// 4 x 5 + 5 + 1 = 25
+			}
 		}
-	}
-	for(int i = 0; i < arr.length; i++) {
-		for(int j = 0; j < arr[i].length; j++) {
-			System.out.printf("%4d" , arr[i][j]);
+		
+		// 배열에 저장된 값을 뒤섞는다. (shuffle : 셔플)
+		for(int i = 0; i < size; i++) {
+			for(int j = 0; j < size; j++) {
+				x = (int)(Math.random() * size);
+				y = (int)(Math.random() * size);
+				// 1 ~ 4까지 랜덤 숫자
+				
+				// bingo[i][j]와 임의로 선택된 값(bingo[x][y])을 바꾼다.
+				int tmp = bingo[i][j];
+				bingo[i][j] = bingo[x][y];
+				bingo[x][y] = tmp;
+			}
 		}
-		System.out.println();
+		
+		do {
+			for(int i = 0; i < size; i++) {
+				for(int j = 0; j < size; j++) {
+					
+				}
+			}
+		}
+		
+	
+	
+	
+	
+	
+	
 	}
-	
-	
-	
-	
-	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
