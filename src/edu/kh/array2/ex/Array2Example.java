@@ -1,6 +1,7 @@
 package edu.kh.array2.ex;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Array2Example {
 	
@@ -163,10 +164,12 @@ public class Array2Example {
 		// 1) 5칸 5칸 공간만들기
 		// 2) 칸마다 최대값 25인 랜덤 값 넣기 (int)( Math.random() * 25 + 1) 하면 될듯
 		
+		Scanner sc = new Scanner(System.in);
+		
 		final int size = 5;
 		int x = 0;
 		int y = 0;
-		int z = 0;
+		int num = 0;
 		
 		int[][] bingo = new int[size][size]; // 5x5 생성
 		
@@ -201,15 +204,25 @@ public class Array2Example {
 		do {
 			for(int i = 0; i < size; i++) {
 				for(int j = 0; j < size; j++) {
-					
+					System.out.printf("%2d ", bingo[i][j]);
+				}
+				System.out.println();
+			}
+			System.out.println();
+			
+			System.out.printf("1~%d의 숫자를 입력하세요. (종료:0) > " , size*size);
+			num = sc.nextInt();// 화면에서 입력받은 내용을 tmp에 저장
+			
+			// 입력받은 숫자와 같은 숫자가 저장된 요소를 찾아서 0을 저장
+			
+			for(int i = 0; i < size; i++) {
+				for(int j = 0; j < size; j++) {
+					if(bingo[i][j] == num) {
+						bingo[i][j] = 0;
+					}
 				}
 			}
-		}
-		
-	
-	
-	
-	
+		} while (num != 0);
 	
 	
 	}
